@@ -1,0 +1,31 @@
+<%content_for :nav do%>
+<%= render :partial => 'common/nav', :locals => {:curr => 'About'} -%>
+<%end%>
+<%content_for :content do %>
+  
+  <div class="row">
+    <div class="half"><%= image_tag 'me.jpg'%></div>
+   <div class="half">
+		<nav class="nav-v">
+		    <ul>
+		        <li><a href="#">Ruby on Rails</a></li>
+		        <li><a href="#">JavaScript</a></li>
+		        <li><a href="#">CSS</a></li>
+		        <li><a href="#">Python</a></li>
+		        <li><a href="#">iOS</a></li>
+		        <li><a href="#">Riding bike</a></li>
+		        <li><a href="#">Playing basketball</a></li>
+		        <li><a href="#">Reading</a></li>
+		    </ul>
+		</nav>
+		<blockquote>
+		<p>As long as you are willing to do anything no late.</p>
+		<small>Author</small> — <cite>Me</cite>
+	</blockquote>
+   </div>
+  </div>
+<% end %>
+
+
+
+

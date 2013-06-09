@@ -1,0 +1,22 @@
+<header id="header">
+	<h1><%= link_to "Dong Way 1986", root_path -%></h1>
+	<nav class="nav-g">
+		<ul>
+			<li <%= 'class=active' if "Home" == curr %>><span><%= link_to "Home", root_path -%></span></li>
+			<li <%='class=active' if "About" == curr %>><span><%= link_to "About Me", about_path %></span></li>
+			<% if user_signed_in? %>
+			  <li>
+			  	<%= link_to('Logout', destroy_user_session_path, :method => :delete) %>       
+			  </li>
+			<% else %>
+			  	<% if "Sign in" == curr%>
+					<li class="active"><span><a href="/users/sign_in">Sign in</a></span></li>
+				<%elsif "Sign up" == curr%>
+					<li class="active"><span><a href="/users/signup">Sign up</a></span></li>
+				<%else%>
+					<li><span><a href="/users/sign_in">Sign in</a></span></li>
+				<%end%>
+			<% end %>
+		</ul>
+	</nav>
+</header>

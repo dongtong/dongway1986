@@ -1,0 +1,12 @@
+<aside class="quarter">
+	<div class="inner">
+		<h6>Lasted Posts</h6>
+		<nav class="nav-v">
+			<ul>
+				<%Post.order("published_at desc").each do |post|%>
+					<li><%= link_to "#{post.title}", post -%></li>
+				<%end%>
+			</ul>
+		</nav>
+	</div>
+</aside>

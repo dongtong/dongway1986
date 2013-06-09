@@ -1,0 +1,8 @@
+<%content_for :nav do%>
+<%= render :partial => 'common/nav', :locals => {:curr => 'Articles'} -%>
+<%end%>
+<%content_for :content do %>
+ 	<h1>New post</h1>
+	<%= render 'form' %>
+	<%= link_to 'Back', posts_path %>
+<% end %>

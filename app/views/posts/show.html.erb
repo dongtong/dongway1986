@@ -1,0 +1,50 @@
+<%content_for :nav do%>
+<%= render :partial => 'common/nav', :locals => {:curr => 'Article'} -%>
+<%end%>
+<%content_for :content do %>
+ 	<h2>
+	  <%= @post.title %>
+	</h2>
+	<div class="article-detail">
+	  <%= raw @post.content %>
+	</div>
+	<% if user_signed_in?%>
+		<%= link_to 'Edit', edit_post_path(@post) %> |
+		<%= link_to 'Back', posts_path %>
+	<%end%>
+	<div class="comments">
+		<%@post.comments.each do |comment|%>
+			<div class="row split">
+				<div class="quarter"><%=raw comment.user.username-%> said:</div><br/>
+				<div class="quarter"><%=raw comment.content%></div>
+			</div>
+		<%end%>
+	</div>
+	<% if user_signed_in?%>
+	<div class="comment-form">
+		<%= form_for([@post, @post.comments.build], :html => {:class => "forms columnar new-comment"}) do |f| %>
+			<ul>
+			    <li>
+			        <fieldset>
+			        	<%= f.hidden_field :user_id, :value => current_user.id%>
+				        <label class="bold"><%= current_user.username %> Say:</label>
+			        	<%= f.text_area :content, :class=>"width-100", :placeholder => "Please enter your words", :style => "height:100px;" %>
+			        </fieldset>
+			    </li>
+		        <li class="push" id="comment-btn">
+		            <input type="submit" name="send" class="btn" value="Submit">
+		        </li>
+			</ul>
+		<%end%>
+	</div>
+	<%else%>
+		<%= link_to "Login, and say", new_user_session_path, :class => "btn btn-round"%> or <%= link_to "Sign up, and say", new_user_registration_path, :class => "btn btn-round"%>
+	<%end%>
+	<script type="text/javascript">
+     	SyntaxHighlighter.all()
+	</script>
+<% end %>
+
+
+
+
