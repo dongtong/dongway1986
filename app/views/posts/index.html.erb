@@ -6,7 +6,7 @@
     <div class="threequarter">
     <% @posts.each do |post|%>
             <div class="article truncate">
-              <h2><%= post.title-%></h2>
+              <h2><%= link_to post.title,  post, :class => "post-title"-%></h2>
               <div class="article-content"><%= post.description-%>...<span class="bg-blue"><%= link_to "Read More", post, :class=> "label more"%></span></div>
             </div>
     <% end %>

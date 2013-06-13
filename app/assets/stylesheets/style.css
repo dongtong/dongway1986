@@ -1,5 +1,7 @@
 body {
-	background: #eee;
+/*	background: #eee;*/
+	background: #e6ecee url(/assets/grid.png);
+    color: #3d3d3d;
 }
 /* =Layout
 -----------------------------------------------------------------------------*/
@@ -13,23 +15,23 @@ body {
 .threequarter>div.article{
 	border-bottom: 1px dashed #ddd;
 }
-/*.truncate {
-	height: 150px;
-	white-space: nowrap;
-	overflow: hidden;
-	text-overflow: ellipsis;
-}*/
+
 .threequarter div.article-content {
 	margin-bottom: 2em;
 }
-#main aside {
+#main div.siderbar {
 	background-color: #f6f6f6;
 }
+
 #blocks li {
 	background-color: #f8f8f8;
 	height: 100px;
 }
 
+#main .post-title {
+	text-decoration: none;
+	color: #333;
+}
 div.article-detail {
 	margin-bottom: 2em;
 	border-bottom: 1px dashed #4d90fe;
@@ -52,7 +54,7 @@ div.article-detail {
 -----------------------------------------------------------------------------*/
 #header {
 	overflow: hidden;
-	margin-bottom: 1.5em;
+	margin-bottom: .5em;
 	border-bottom: 1px solid #eee;
 }
 #header h1 {
@@ -62,10 +64,31 @@ div.article-detail {
 #header h1>a {
 	text-decoration: none;
 }
-#header nav {
-	padding-top: 1em;
-	float: right;
+#header>.row{
+	margin-bottom: .5em;
 }
+#site-name {
+	float: left;
+}
+#author{
+    border-left: 1px solid blue;
+    margin-left: 1.5em;
+    float: right;
+    background-color: #99e;
+    height: 2.3em;
+}
+#header div.nav-g {
+	padding-top: .5em;
+	margin-bottom: 1em;
+	float: left;
+	width: 100%;
+	border-top: 1px solid #eee;
+}
+
+#header div.nav-g ul.threequarter {
+/*	border-right: 1px solid #eee;*/
+}
+
 #header li.active{
 	border-bottom: 3px solid #4d90fe;
 }

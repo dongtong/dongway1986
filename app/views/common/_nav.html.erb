@@ -1,7 +1,9 @@
-<header id="header">
-	<h1><%= link_to "Dong Way 1986", root_path -%></h1>
-	<nav class="nav-g">
-		<ul>
+<div id="header">
+	<div class="row">
+		<div class="threequarter" id="site-name"><h1><%= link_to "磨叽web", root_path -%></h1></div>
+	</div>
+	<div class="nav-g">
+		<ul class="threequarter">
 			<li <%= 'class=active' if "Home" == curr %>><span><%= link_to "Home", root_path -%></span></li>
 			<li <%='class=active' if "About" == curr %>><span><%= link_to "About Me", about_path %></span></li>
 			<% if user_signed_in? %>
@@ -18,5 +20,5 @@
 				<%end%>
 			<% end %>
 		</ul>
-	</nav>
-</header>
+	</div>
+</div>
