@@ -8,6 +8,7 @@ gem 'rails', '3.2.12'
 gem 'pg'
 gem 'devise'
 gem 'will_paginate'
+gem "acts-as-taggable-on", "~> 2.4.1"
 
 
 # Gems used only for assets and not required

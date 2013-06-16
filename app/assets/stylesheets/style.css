@@ -20,7 +20,25 @@ body {
 	margin-bottom: 2em;
 }
 #main div.siderbar {
-	background-color: #f6f6f6;
+	background-color: #e5e5e5;
+}
+#main div.siderbar .seperator{
+	background-color: #fff;
+	height: .5em;
+}
+
+#tag_cloud {
+	line-height: 1em;
+	padding: 1.5em;
+}
+#tag_cloud .s{
+	font-size: .5em;
+}
+#tag_cloud .m{
+	font-size: .8em;
+}
+#tag_cloud .l{
+	font-size: 1em;
 }
 
 #blocks li {

@@ -1,12 +1,13 @@
 Dongway1986::Application.routes.draw do
   resources :comments
 
-
+  
   devise_for :users
 
   match "about/index" => "about#index", :as => :about
 
   root :to => 'posts#index'
+  get 'tags/:tag', to: 'posts#index', as: :tag
   resources :posts do 
     resources :comments
   end

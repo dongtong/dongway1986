@@ -8,6 +8,7 @@
             <div class="article truncate">
               <h2><%= link_to post.title,  post, :class => "post-title"-%></h2>
               <div class="article-content"><%= post.description-%>...<span class="bg-blue"><%= link_to "Read More", post, :class=> "label more"%></span></div>
+              <div>Tags: <%= raw post.tag_list.map{|t| link_to t, tag_path(t)}.join(", ")%></div>
             </div>
     <% end %>
     </div>
