@@ -15,3 +15,7 @@
 //require_tree .
 //= require 'shCore'
 //= require 'shBrushJScript'
+//= require 'shBrushRuby'
+//= require 'shBrushPython'
+//= require 'shBrushCss'
+//= require 'shBrushPlain'
