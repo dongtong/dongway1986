@@ -9,7 +9,7 @@ gem 'pg'
 gem 'devise'
 gem 'will_paginate'
 gem "acts-as-taggable-on", "~> 2.4.1"
-
+gem 'mercury-rails'
 
 # Gems used only for assets and not required
 # in production environments by default.

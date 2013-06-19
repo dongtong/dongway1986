@@ -1,6 +1,12 @@
 body {
 	background: #e5e5e5;
 }
+
+/*syntax highlighter*/
+.syntaxhighlighter { 
+     overflow-y: hidden !important; 
+     overflow-x: auto !important; 
+}
 /* =Layout
 -----------------------------------------------------------------------------*/
 .wrapper {
