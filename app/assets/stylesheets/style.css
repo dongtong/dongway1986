@@ -18,7 +18,7 @@ body {
 }
 .threequarter>div.article{
 	margin-top: .5em;
-	border-bottom: 1px dashed #336699;
+	border-bottom: 1px dotted #336699;
 }
 
 .threequarter div.article-content {
