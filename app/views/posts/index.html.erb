@@ -1,20 +1,33 @@
-<%content_for :nav do%>
-<%= render :partial => 'common/nav', :locals => {:curr => 'Home'} -%>
+<%content_for :menu do%>
+  <%= render :partial => 'common/menu', :locals => {:curr => 'Home'}-%>
 <%end%>
+
 <%content_for :content do %>
-  <div class="row">
-    <div class="threequarter">
-    <% @posts.each do |post|%>
-            <div class="article truncate">
-              <h2><%= link_to post.title,  post, :class => "post-title"-%></h2>
-              <div class="article-content"><%= post.description-%>...<span class="bg-blue"><%= link_to "Read More", post, :class=> "label more"%></span></div>
-              <div>Tags: <%= raw post.tag_list.map{|t| link_to t, tag_path(t)}.join(", ")%></div>
-            </div>
-    <% end %>
-    <%= will_paginate @posts %>
-    </div>
-    <%= render :partial => 'common/siderbar' -%>
+  <% @posts.each do |post|%>
+  <div class="posts">
+    <h1 class="content-subhead"><%= link_to post.title,  post%></h1>
+                <!-- A single blog post -->
+                <section class="post">
+                    <header class="post-header">
+                        <h3 class="post-title"><%= raw post.title%></h3>
+                        <p class="post-meta">
+                            Tags:
+                            <% post.tag_list.map do |t|%>
+                              <%= link_to t, tag_path(t), :class => 'post-category post-category-design'%>
+                            <%end%>
+                        </p>
+                    </header>
+
+                    <div class="post-description">
+                        <p>
+                            <%= post.description-%>...<span><%= link_to "Read More", post%></span>
+                        </p>
+                    </div>
+                </section>
   </div>
-  
+  <% end %>
+  <%= will_paginate @posts, class: 'pure-paginator' %>
 <% end %>
 
+
+            

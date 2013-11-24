@@ -7,6 +7,7 @@ body {
      overflow-y: hidden !important; 
      overflow-x: auto !important; 
 }
+
 /* =Layout
 -----------------------------------------------------------------------------*/
 .wrapper {
@@ -121,6 +122,8 @@ div.article-detail {
 #header li.active{
 	border-bottom: 3px solid #4d90fe;
 }
+
+
 
 /* =Footer
 -----------------------------------------------------------------------------*/

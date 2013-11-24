@@ -1,21 +1,22 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Dongway1986</title>
+  <title>I'm on my way</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-	<div class="wrapper">
-		<%= yield :nav %>
-		<p class="notice"><%= notice %></p>
-        <p class="alert"><%= alert %></p>
-		<div id="main">
-			<%= yield :content%>
-		</div>
-		<%= render 'common/footer' -%>
+	<div class="pure-g-r" id="layout">
+		<%= yield :menu %>
+	    <div class="pure-u-1" id="container">
+	        <div class="content">
+	        	<%= yield :content %>
+	        </div>
+	    </div>
+
 	</div>
+		    <%= render 'common/footer' -%>
 </body>
 </html>

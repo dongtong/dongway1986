@@ -1,5 +1,5 @@
-<%content_for :nav do%>
-  <%= render :partial => 'common/nav', :locals => {:curr => 'Sign in'} -%>
+<%content_for :menu do%>
+  <%= render :partial => 'common/menu', :locals => {:curr => 'Sign in'} -%>
 <%end%>
 <%content_for :content do %>
   <h2>Edit <%= resource_name.to_s.humanize %></h2>

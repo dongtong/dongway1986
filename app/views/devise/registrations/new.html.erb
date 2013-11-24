@@ -1,38 +1,34 @@
-<%content_for :nav do%>
-<%= render :partial => 'common/nav', :locals => {:curr => 'Sign up'} -%>
+<%content_for :menu do%>
+<%= render :partial => 'common/menu', :locals => {:curr => 'Sign up'} -%>
 <%end%>
 <%content_for :content do %>
-  	<h2>Sign up</h2>
 
-	<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => {:class => "forms columnar"}) do |f| %>
+	<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => {:class => "pure-form pure-form-aligned"}) do |f| %>
 		<fieldset>
-		    <ul>
-		        <li><%= devise_error_messages! %></li>
-
-		        <li>
-	                <%= f.label :username, :class => "bold" %>
+			 	<legend>Sign up</legend>
+			 	<!-- <li><%= devise_error_messages! %></li> -->
+		    	<div class="pure-control-group">
+	                <%= f.label :"username:"%>
 	                <%= f.text_field :username, :autofocus => true %>
-	            </li>
-			  
-		        <li>
-	                <%= f.label :email, :class => "bold" %>
-	                <%= f.email_field :email %>
-	            </li>
-
-	            <li>
-	                <%= f.label :password, :class => "bold" %>
+	            </div>
+	            <div class="pure-control-group">
+	                <%= f.label :"email:"%>
+	                <%= f.email_field :email%>
+	            </div>
+	            <div class="pure-control-group">
+	                <%= f.label :"password:" %>
 	                <%= f.password_field :password %>
-	            </li>
-
-	            <li>
-	                <%= f.label :password_confirmation, :class => "bold" %>
+	            </div>
+	            <div class="pure-control-group">
+	                <%= f.label :"password_confirmation:" %>
 	                <%= f.password_field :password_confirmation %>
-	            </li>
-
-	            <li class="push">
-	                <%= f.submit "Sign up", :class => "btn" %>
-	            </li>
-			</ul>
+	            </div>
+				<div class="pure-controls">
+		            <label for="cb" class="pure-checkbox">
+		                <input id="cb" type="checkbox"> I've read the terms and conditions
+		            </label>
+		            <%= f.submit "Sign up", class: 'pure-button pure-button-primary' %>
+		        </div>
 		</fieldset>
 	<% end %>
 

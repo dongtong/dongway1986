@@ -1,17 +1,37 @@
-<%content_for :nav do%>
-<%= render :partial => 'common/nav', :locals => {:curr => 'Article'} -%>
+<%content_for :menu do%>
+<%= render :partial => 'common/menu', :locals => {:curr => 'Article'} -%>
 <%end%>
 <%content_for :content do %>
- 	<h2>
-	  <%= @post.title %>
-	</h2>
-	<div class="article-detail">
-	  <%= raw @post.content %>
-	</div>
+	<div class="posts">
+    <h1 class="content-subhead"><%= @post.title %></h1>
+
+                <!-- A single blog post -->
+                <section class="post">
+                    <header class="post-header">
+                        <h2 class="post-title"><%= @post.title %></h2>
+                        <p class="post-meta">
+                            By <a href="#" class="post-author">Tilo Mitra</a> under 
+                            <% @post.tag_list.map do |t|%>
+                              <%= link_to t, tag_path(t), :class => 'post-category post-category-design'%>
+                            <%end%>
+                        </p>
+                    </header>
+
+                    <div class="post-description">
+                        <p>
+                            <%= raw @post.content-%>
+                        </p>
+                    </div>
+                </section>
+  </div>
+
+
+
 	<% if user_signed_in? && current_user.admin?%>
 		<%= link_to 'Edit', edit_post_path(@post) %> |
 		<%= link_to 'Back', posts_path %>
 	<%end%>
+
 	<div class="comments">
 		<%@post.comments.each do |comment|%>
 			<div class="row split">
@@ -20,25 +40,23 @@
 			</div>
 		<%end%>
 	</div>
+	
 	<% if user_signed_in?%>
 	<div class="comment-form">
-		<%= form_for([@post, @post.comments.build], :html => {:class => "forms columnar new-comment"}) do |f| %>
-			<ul>
-			    <li>
-			        <fieldset>
-			        	<%= f.hidden_field :user_id, :value => current_user.id%>
-				        <label class="bold"><%= current_user.username %> Say:</label>
-			        	<%= f.text_area :content, :class=>"width-100", :placeholder => "Please enter your words", :style => "height:100px;" %>
-			        </fieldset>
-			    </li>
-		        <li class="push" id="comment-btn">
-		            <input type="submit" name="send" class="btn" value="Submit">
-		        </li>
-			</ul>
+		<%= form_for([@post, @post.comments.build], :html => {:class => "pure-form"}) do |f| %>
+			 <fieldset class="pure-group">
+			 	<div class="pure-g-r">
+			 		<%= f.hidden_field :user_id, :value => current_user.id%>
+				    <label for="user-comment" id="user_comment"><%= current_user.username %> Say:</label>
+			    	<%= f.text_area :content, :class=>"width-100", :placeholder => "Please say what u wanna say :)", :style => "height:100px; width: 100%;" %>
+			 	</div>
+			 </fieldset>
+
+		    <input type="submit" name="send" class="pure-button pure-input-1-3 pure-button-primary" value="Submit">
 		<%end%>
 	</div>
 	<%else%>
-		<%= link_to "Login, and say", new_user_session_path, :class => "btn btn-round"%> or <%= link_to "Sign up, and say", new_user_registration_path, :class => "btn btn-round"%>
+		<%= link_to "Login, and say", new_user_session_path, :class => "pure-button pure-button-small pure-button-primary", id: "loging"%> or <%= link_to "Sign up, and say", new_user_registration_path, :class => "pure-button pure-button-small pure-button-success"%>
 	<%end%>
 	<script type="text/javascript">
      	SyntaxHighlighter.all()

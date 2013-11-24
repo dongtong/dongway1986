@@ -1,29 +1,33 @@
-<%content_for :nav do%>
-	<%= render :partial => 'common/nav', :locals => {:curr => 'Sign in'} -%>
+<%content_for :menu do%>
+	<%= render :partial => 'common/menu', :locals => {:curr => 'Sign in'} -%>
 <%end%>
 <%content_for :content do %>
-	<h2>Sign in</h2>
 
-	<%= form_for(resource, :as => resource_name, :url => session_path(resource_name), :html => {:class => "forms columnar"}) do |f| %>
+
+	<%= form_for(resource, :as => resource_name, :url => session_path(resource_name), :html => {:class => "pure-form pure-form-aligned"}) do |f| %>
 		<fieldset>
-		    <ul>
-		    	<li>
-	                <%= f.label :username, :class => "bold" %>
+			 	<legend>Sign in</legend>
+		    	<div class="pure-control-group">
+	                <%= f.label :"username:"%>
 	                <%= f.text_field :login, :autofocus => true %>
-	            </li>
-	            <li>
-	                <%= f.label :password, :class => "bold" %>
+	            </div>
+	            <div class="pure-control-group">
+	                <%= f.label :"password:" %>
 	                <%= f.password_field :password %>
-	            </li>
+	            </div>
 
 	            <% if devise_mapping.rememberable? -%>
-		            <li>
+<!-- 		            <li>
 		                <%= f.check_box :remember_me %><%= f.label :remember_me, :class => "bold" %>
-		            </li>
+		            </li> -->
 				<% end -%>
-		    </ul>
+				<div class="pure-controls">
+		            <label for="cb" class="pure-checkbox">
+		                <input id="cb" type="checkbox"> I've read the terms and conditions
+		            </label>
+		            <%= f.submit "Sign in", class: 'pure-button pure-button-primary' %>
+		        </div>
 		</fieldset>
-	  <div><%= f.submit "Sign in" %></div>
 	<% end %>
 
 	<%= render "devise/shared/links" %>

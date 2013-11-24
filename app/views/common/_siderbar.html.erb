@@ -1,19 +1,19 @@
-<div class="quarter siderbar">
-	<div class="inner">
-		<h6>Lasted Posts</h6>
-		<nav class="nav-v">
-			<ul>
-				<%Post.order("published_at desc").each do |post|%>
-					<li><%= link_to "#{post.title}", post -%></li>
-				<%end%>
-			</ul>
-		</nav>
-	</div>
-	<div class="seperator"></div>
-	<div id="tag_cloud">
-		<h6>Tags:</h6>
-		<%tag_cloud Post.tag_counts, %w[s m l] do |tag, css_class|%>
-			<%= link_to tag.name, tag_path(tag.name), class: css_class%>
-		<%end%>
-	</div>
+<div class="sidebar pure-u">
+        <header class="header">
+            <hgroup>
+                <h1 class="brand-title">A Sample Blog</h1>
+                <h2 class="brand-tagline">Creating a blog layout using Pure</h2>
+            </hgroup>
+
+            <nav class="nav">
+                <ul class="nav-list">
+                    <li class="nav-item">
+                        <a class="pure-button" href="http://purecss.io">Pure</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="pure-button" href="http://yuilibrary.com">YUI Library</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
 </div>

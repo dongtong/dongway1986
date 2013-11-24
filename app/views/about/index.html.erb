@@ -1,28 +1,53 @@
-<%content_for :nav do%>
-<%= render :partial => 'common/nav', :locals => {:curr => 'About'} -%>
+<%content_for :menu do%>
+<%= render :partial => 'common/menu', :locals => {:curr => 'About'} -%>
 <%end%>
 <%content_for :content do %>
-  
-  <div class="row">
-    <div class="half"><%= image_tag 'me.jpg'%></div>
-   <div class="half">
-		<nav class="nav-v">
-		    <ul>
-		        <li><a href="#">Ruby on Rails</a></li>
-		        <li><a href="#">JavaScript</a></li>
-		        <li><a href="#">CSS</a></li>
-		        <li><a href="#">Python</a></li>
-		        <li><a href="#">iOS</a></li>
-		        <li><a href="#">Riding bike</a></li>
-		        <li><a href="#">Playing basketball</a></li>
-		        <li><a href="#">Reading</a></li>
-		    </ul>
-		</nav>
-		<blockquote>
-		<p>不积跬步，无以至千里。</p>
-	</blockquote>
-   </div>
+  <div class="posts">
+                <!-- A single blog post -->
+                <section class="post">
+                    <header class="post-header">
+                        <%= image_tag 'me-64x64.png', class: 'post-avatar', alt: "ME"%>
+                        <h2 class="post-title">About Me</h2>
+
+                        <blockquote class="content-quote">
+                            <%= raw "持续，反复，没有捷径!"-%>
+                        </blockquote>
+                        <ul class="layout-item-modules pure-g">
+                  
+                            <li class="layout-item-module layout-item-module-base pure-u">
+                                <a href="/base/">Ruby on Rails</a>
+                            </li>
+                          
+                            
+                            <li class="layout-item-module layout-item-module-base pure-u">
+                                <a href="/base/">JavaScript</a>
+                            </li>
+                          
+                            
+                            <li class="layout-item-module layout-item-module-base pure-u">
+                                <a href="/base/">CSS</a>
+                            </li>
+                          
+                            
+                            <li class="layout-item-module layout-item-module-base pure-u">
+                                <a href="/base/">Python</a>
+                            </li>
+
+                            <li class="layout-item-module layout-item-module-base pure-u">
+                                <a href="/base/">iOS</a>
+                            </li>
+                          
+                            
+                            <li class="layout-item-module layout-item-module-base pure-u">
+                                <a href="/base/">Reading</a>
+                            </li>
+                          
+            
+                        </ul>
+                    </header>
+                </section>
   </div>
+  
 <% end %>
 
 

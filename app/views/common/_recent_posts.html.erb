@@ -1,0 +1,19 @@
+<div class="quarter siderbar">
+	<div class="inner">
+		<h6>Lasted Posts</h6>
+		<nav class="nav-v">
+			<ul>
+				<%Post.order("published_at desc").each do |post|%>
+					<li><%= link_to "#{post.title}", post -%></li>
+				<%end%>
+			</ul>
+		</nav>
+	</div>
+	<div class="seperator"></div>
+	<div id="tag_cloud">
+		<h6>Tags:</h6>
+		<%tag_cloud Post.tag_counts, %w[s m l] do |tag, css_class|%>
+			<%= link_to tag.name, tag_path(tag.name), class: css_class%>
+		<%end%>
+	</div>
+</div>

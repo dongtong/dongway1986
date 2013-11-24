@@ -1,0 +1,25 @@
+<div class="pure-u" id="menu">
+    <div class="pure-menu pure-menu-open">
+        <%= link_to "Dig", root_path, class:'pure-menu-heading', id: 'logo'-%>
+        <ul id="nav">
+        	<li <%= 'class=active' if "Home" == curr %>><span><%= link_to "Home", root_path -%></span></li>
+            <li class=" menu-item-divided">
+                <a href="#">Lab</a>
+            </li>
+            <% if user_signed_in? %>
+			  <li>
+			  	<%= link_to('Logout', destroy_user_session_path, :method => :delete) %>       
+			  </li>
+			<% else %>
+			  	<% if "Sign in" == curr%>
+					<li class="active"><span><a href="/users/sign_in">Sign in</a></span></li>
+				<%elsif "Sign up" == curr%>
+					<li class="active"><span><a href="/users/signup">Sign up</a></span></li>
+				<%else%>
+					<li><span><a href="/users/sign_in">Sign in</a></span></li>
+				<%end%>
+			<% end %>
+            <li <%='class=active' if "About" == curr %>><span><%= link_to "About", about_path %></span></li>
+        </ul>
+    </div>
+</div>
