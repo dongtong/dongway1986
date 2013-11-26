@@ -10,7 +10,7 @@
                     <header class="post-header">
                         <h2 class="post-title"><%= @post.title %></h2>
                         <p class="post-meta">
-                            By <a href="#" class="post-author">Tilo Mitra</a> under 
+                            Tags:
                             <% @post.tag_list.map do |t|%>
                               <%= link_to t, tag_path(t), :class => 'post-category post-category-design'%>
                             <%end%>

@@ -143,6 +143,9 @@ a.pure-button {
 .pure-button-small {
     font-size: 85%;
 }
+.pure-button-xsmall {
+    font-size: 70%;
+}
 a.pure-button:hover {
     text-decoration: none;
 }
@@ -311,7 +314,17 @@ a.pure-button:hover {
     background: none;
     color: #333;
 }
-
+/* =Syntaxhighlight
+-----------------------------------------------------------------------------*/
+.syntaxhighlighter { 
+     overflow-y: hidden !important; 
+     overflow-x: auto !important; 
+}
+.syntaxhighlighter .toolbar{
+    display: none;
+}
+/* =RWD
+-----------------------------------------------------------------------------*/
 @media (max-width: 767px) {
     #menu {
         width: 100%;

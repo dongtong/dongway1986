@@ -13,9 +13,9 @@ module WillPaginate
 
 			def page_number(page)
 				if page == current_page
-					tag(:li, link(page, '#', :class => 'pure-button pure-button-active'))
+					tag(:li, link(page, '#', :class => 'pure-button pure-button-xsmall pure-button-active'))
 				else
-					tag(:li, link(page, page, rel: rel_value(page), :class => 'pure-button'))
+					tag(:li, link(page, page, rel: rel_value(page), :class => 'pure-button pure-button-xsmall'))
 				end
 			end
 
@@ -31,9 +31,9 @@ module WillPaginate
 
 			def previous_or_next_page(page, text, classname)
 				if page
-					tag(:li, link(text, page, :class => "pure-button #{classname}"))
+					tag(:li, link(text, page, :class => "pure-button pure-button-xsmall #{classname}"))
 				else
-					tag(:li, tag(:span, text, :class => "pure-button #{classname} disabled") )
+					tag(:li, tag(:span, text, :class => "pure-button pure-button-xsmall #{classname} disabled") )
 				end
 			end
 
