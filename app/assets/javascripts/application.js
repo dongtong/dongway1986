@@ -20,6 +20,20 @@
 //= require 'shBrushCss'
 //= require 'shBrushPlain'
 
+
+$(function(){
+	//search
+	// var searchWidth = $('#search').width();
+	// $('#search').focusin(function(){
+	// 	$(this).css({width: '200px'});
+	// }).focusout(function(){
+	// 	$(this).css({width: searchWidth});
+	// });
+
+
+})
+
+
 //Typekit
 try { Typekit.load(); } catch (e) {}
 //google analytics object
@@ -30,3 +44,4 @@ m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 
 ga('create', 'UA-41480445-1', 'purecss.io');
 ga('send', 'pageview');
+

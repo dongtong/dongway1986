@@ -14,7 +14,7 @@
 /log/*.log
 /tmp
 /config/database.yml
-/config/environments/production.rb
+/config/environments/*.rb
 /app/.DS_Store
 /app/assets/.DS_Store
 /app/assets/images/.DS_Store

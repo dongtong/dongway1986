@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
-  before_filter :authenticate_user!, :except => [:index, :show]
-  before_filter :admin?, :except => [:index, :show]
+  before_filter :authenticate_user!, :except => [:index, :show, :search]
+  before_filter :admin?, :except => [:index, :show, :search]
   # GET /posts
   # GET /posts.json
   def index
@@ -12,6 +12,15 @@ class PostsController < ApplicationController
 
     respond_to do |format|
       format.html # index.html.erb
+      format.json { render json: @posts }
+    end
+  end
+
+  def search
+    @posts = Post.where("content like ? or title like ? or description like ?", "%#{params[:search]}%","%#{params[:search]}%","%#{params[:search]}%"   )
+                 .order("created_at DESC").paginate(:page => params[:page], :per_page => 10)
+    respond_to do |format|
+      format.html { render 'index'}
       format.json { render json: @posts }
     end
   end

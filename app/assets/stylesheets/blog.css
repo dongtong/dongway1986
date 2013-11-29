@@ -17,6 +17,17 @@ a:focus {
     text-decoration: underline;
 }
 
+
+#toolbar {
+    margin-top: .5em;
+    padding: 0.6em 0 0.6em 0.6em;
+}
+
+#search_btn {
+    font-size: 80%;
+}
+
+
 /* LAYOUT CSS */
 #layout {
     padding-left: 15%; /* "left col (nav + list)" width */

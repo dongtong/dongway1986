@@ -5,6 +5,7 @@ Dongway1986::Application.routes.draw do
   devise_for :users
 
   match "about/index" => "about#index", :as => :about
+  match "/search" => "posts#search", :as => :search, :via => :post
 
   root :to => 'posts#index'
   get 'tags/:tag', to: 'posts#index', as: :tag

@@ -11,6 +11,15 @@
 	<div class="pure-g-r" id="layout">
 		<%= yield :menu %>
 	    <div class="pure-u-1" id="container">
+	    	<div id="toolbar" class="pure-g-r">
+	    		<div class="pure-u-3-5"></div>
+	    		<div id="search-form" class="pure-u-2-5">
+	    		<%= form_tag('/search', class: 'pure-form') do%>
+	    			<%= text_field_tag 'search', '', class: 'pure-input-rounded'%>
+	    			<%= submit_tag 'Search', class: 'pure-button', id: "search_btn"%>
+	    		<%end%>
+	    		</div>
+	    	</div>
 	        <div class="content">
 	        	<%= yield :content %>
 	        </div>
