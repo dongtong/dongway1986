@@ -5,7 +5,12 @@
 <%content_for :content do %>
   <% @posts.each do |post|%>
   <div class="posts">
-    <h1 class="content-subhead"><%= link_to post.title,  post%></h1>
+    <div class="content-subhead pure-u-1">
+      <div class="pure-u-3-5"><%= link_to post.title,  post%></div>
+      <div class="pure-u-1-5">
+        at: <%= post.created_at.strftime('%Y-%m-%d')%>
+      </div>
+    </div>
                 <!-- A single blog post -->
                 <section class="post">
                     <header class="post-header">
