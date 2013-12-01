@@ -1,0 +1,28 @@
+<%content_for :menu do%>
+  <%= render :partial => 'common/menu', :locals => {:curr => 'Book'}-%>
+<%end%>
+<%content_for :content do %>
+    <%@books.each do |book|%>
+      <div class="posts book-list">
+        <div class="book-thumb">
+          <%=image_tag "#{book.id}.jpg"%>
+        </div>
+        <div class="book-intro">
+          <div class="book-name"><%= book.name %></div>
+          <div class="book-author">Author: <%= book.author %></div>
+          <div class="book-publisher">Publisher: <%= book.publisher %></div>
+          <div class="book-published-at">Publication Date: <%= book.published_at.strftime('%Y-%m-%d') %></div>
+          <div class="book-description"><%= book.description[0..460] << "..."%> <span><%= link_to 'Read More', book%></span>
+           </div>
+           <span class="book-download"><%= link_to 'Download', book, class: 'pure-button pure-button-success'%></span>
+        </div>
+
+      </div>
+    <%end%>
+
+
+
+
+
+
+<%end%>

@@ -1,4 +1,7 @@
 Dongway1986::Application.routes.draw do
+  resources :books
+
+
   resources :comments
 
   

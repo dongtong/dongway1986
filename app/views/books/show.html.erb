@@ -1,0 +1,38 @@
+
+<%content_for :menu do%>
+  <%= render :partial => 'common/menu', :locals => {:curr => 'Book'}-%>
+<%end%>
+<%content_for :content do %>
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @book.name %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= raw @book.description %>
+</p>
+
+<p>
+  <b>Author:</b>
+  <%= @book.author %>
+</p>
+
+<p>
+  <b>Publisher:</b>
+  <%= @book.publisher %>
+</p>
+
+<p>
+  <b>Published at:</b>
+  <%= @book.published_at %>
+</p>
+
+<p>
+  <b>Download url:</b>
+  <%= @book.download_url %>
+</p>
+
+<%end%>

@@ -183,7 +183,7 @@ a.pure-button:hover {
 -----------------------------------------------------------------------------*/
 #container {
     background: none repeat scroll 0 0 #F6F6F6;
-            border-bottom: 1px solid #ccc;
+            /*border-bottom: 1px solid #ccc;*/
 }
 
 .content-subhead {
@@ -334,6 +334,49 @@ a.pure-button:hover {
 .syntaxhighlighter .toolbar{
     display: none;
 }
+
+/* =E-Book
+-----------------------------------------------------------------------------*/
+.book-list {
+    border-bottom: 1px dotted #ccc;
+}
+.book-thumb {
+    float: left;
+    padding: 5px;
+}
+.book-thumb img {
+          -webkit-box-shadow: 0px 2px 7px 0px rgba(0, 0, 0, .27);
+                    box-shadow: 0px 2px 7px 0px rgba(0, 0, 0, .27);
+}
+.book-intro {
+    font-size: .9em;
+    margin-left: 180px;
+    margin-bottom: 10px;
+    padding-top: 5px;
+    /*float: right;*/
+    /*margin-right: 10px;*/
+}
+.book-name {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.book-author, .book-publisher, .book-published-at {
+    font-style: italic;
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
+.book-description {
+    margin-top: 10px;
+    line-height: 18px;
+}
+.book-download {
+    margin-left: 79%;
+}
+.book-download a {
+    color: #fff;
+}
+
 /* =RWD
 -----------------------------------------------------------------------------*/
 @media (max-width: 767px) {
@@ -354,10 +397,17 @@ a.pure-button:hover {
     #layout {
         padding: 0;
     }
+
+    .book-download {
+        margin-left: 58%;
+    }
 }
 
 @media (max-width: 480px) {
     .content {
         padding: 2em 1em 0;
+    }
+    .book-download {
+        margin-left: 0;
     }
 }
