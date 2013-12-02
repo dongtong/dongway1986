@@ -92,14 +92,18 @@ a:focus {
         border-top: 1px solid #ccc;
     }
 
-        #menu .pure-menu li a:hover,
-        #menu .pure-menu li a:focus {
-            background: #dedede;
-            text-decoration: none;
-            color: #333;
-        }
+    #menu .pure-menu li a:hover,
+    #menu .pure-menu li a:focus {
+        background: #dedede;
+        text-decoration: none;
+        color: #333;
+    }
     #menu .pure-menu li.active {
         border-right: 3px solid #4d85d1;
+        background-color: #dedede;
+    }
+    #menu .pure-menu li.active a {
+        color: #333;
     }
     .pure-menu-link {
         display: none; /* show this only on small screens */
@@ -110,10 +114,10 @@ a:focus {
         padding: 0.75em 1em;
     }
 
-        .pure-menu-link:hover,
-        .pure-menu-link:focus {
-            background: #000;
-        }
+    .pure-menu-link:hover,
+    .pure-menu-link:focus {
+        background: #000;
+    }
 
     #menu .pure-menu-heading {
         font-size: 110%;
@@ -139,13 +143,16 @@ a:focus {
 
 /* =posts
 -----------------------------------------------------------------------------*/
-.post-preview {
+.post-preview, .book-list, .book-detail {
     background: #ffffff;
     margin-bottom: 5px;
     padding-left: 10px;
     padding-top: 2px;
+    padding-right: 2px;
+    -webkit-box-shadow: 0px 2px 5px 1px rgba(0, 0, 0, .27);
+    box-shadow: 0px 2px 5px 1px rgba(0, 0, 0, .27);
 }
-.post-preview:hover {
+.post-preview:hover{
     border-left: 3px solid #4d85d1;
 }
 .post-description p {
@@ -347,7 +354,7 @@ a.pure-button:hover {
 /* =E-Book
 -----------------------------------------------------------------------------*/
 .book-list {
-    border-bottom: 1px dotted #ccc;
+    /*border-bottom: 1px dotted #ccc;*/
 }
 .book-thumb {
     float: left;
@@ -362,6 +369,7 @@ a.pure-button:hover {
     margin-left: 180px;
     margin-bottom: 10px;
     padding-top: 5px;
+    padding-bottom: 5px;
     /*float: right;*/
     /*margin-right: 10px;*/
 }
