@@ -4,32 +4,27 @@
 
 <%content_for :content do %>
   <% @posts.each do |post|%>
-  <div class="posts">
-    <div class="content-subhead pure-u-1">
-      <div class="pure-u-3-5"><%= link_to post.title,  post%></div>
-      <div class="pure-u-1-5">
-        at: <%= post.created_at.strftime('%Y-%m-%d')%>
-      </div>
-    </div>
-                <!-- A single blog post -->
-                <section class="post">
-                    <header class="post-header">
-                        <h3 class="post-title"><%= raw post.title%></h3>
-                        <p class="post-meta">
-                            Tags:
-                            <% post.tag_list.map do |t|%>
-                              <%= link_to t, tag_path(t), :class => 'post-category post-category-design'%>
-                            <%end%>
-                        </p>
-                    </header>
+    <div class="posts post-preview">
+      <!-- A single blog post -->
+      <section class="post">
+        <header class="post-header">
+          <h3 class="post-title"><%= link_to post.title,  post%></h3>
+          <p class="post-meta">
+            Tags:
+            <% post.tag_list.map do |t|%>
+              <%= link_to t, tag_path(t), :class => 'post-category post-category-design'%>
+            <%end%>
 
-                    <div class="post-description">
-                        <p>
-                            <%= post.description-%>...<span><%= link_to "Read More", post%></span>
-                        </p>
-                    </div>
-                </section>
-  </div>
+            Published At:
+            <%= post.created_at.strftime('%Y-%m-%d')%>
+          </p>
+        </header>
+
+        <div class="post-description">
+          <p><%= post.description-%>...<span><%= link_to "Read More", post%></span></p>
+        </div>
+      </section>
+    </div>
   <% end %>
   <%= will_paginate @posts, class: 'pure-paginator' %>
 <% end %>

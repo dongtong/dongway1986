@@ -139,6 +139,15 @@ a:focus {
 
 /* =posts
 -----------------------------------------------------------------------------*/
+.post-preview {
+    background: #ffffff;
+    margin-bottom: 5px;
+    padding-left: 10px;
+    padding-top: 2px;
+}
+.post-preview:hover {
+    border-left: 3px solid #4d85d1;
+}
 .post-description p {
     font-size: 95%;
 }
