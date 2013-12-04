@@ -32,7 +32,7 @@ a:focus {
 #layout {
     padding-left: 10%; /* "left col (nav + list)" width */
     position: relative;
-    border-bottom: 1px solid #ccc;
+    /*border-bottom: 1px solid #ccc;*/
 }
 
 /* --------------------------
@@ -199,7 +199,7 @@ a.pure-button:hover {
     background: none repeat scroll 0 0 #F6F6F6;
     margin: 0 auto;
     padding: 2em 3em 0;
-            /*border-bottom: 1px solid #ccc;*/
+    border-bottom: 1px solid #ccc;
 }
 
 .content-subhead {
