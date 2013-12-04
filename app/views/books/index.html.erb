@@ -5,7 +5,7 @@
     <%@books.each do |book|%>
       <div class="posts book-list">
         <div class="book-thumb">
-          <%=image_tag "#{book.id}.jpg"%>
+          <%= image_tag book.bookcover.url(:thumb) %>
         </div>
         <div class="book-intro">
           <div class="book-name"><%= book.name %></div>
@@ -19,10 +19,5 @@
 
       </div>
     <%end%>
-
-
-
-
-
-
+    <div class="pagination"><%= will_paginate @books, class: 'pure-paginator' %></div>
 <%end%>

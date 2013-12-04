@@ -2,8 +2,8 @@
 <%= render :partial => 'common/menu', :locals => {:curr => 'Article'} -%>
 <%end%>
 <%content_for :content do %>
-	<div class="posts">
-    <h1 class="content-subhead"><%= @post.title %></h1>
+	<div class="posts post-detail">
+    <!-- <h1 class="content-subhead"><%= @post.title %></h1> -->
 
                 <!-- A single blog post -->
                 <section class="post">
@@ -28,8 +28,10 @@
 
 
 	<% if user_signed_in? && current_user.admin?%>
+	<div class="post-operation">
 		<%= link_to 'Edit', edit_post_path(@post) %> |
 		<%= link_to 'Back', posts_path %>
+	</div>
 	<%end%>
 
 	<div class="comments">

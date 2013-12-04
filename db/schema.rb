@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131129152018) do
+ActiveRecord::Schema.define(:version => 20131204141744) do
 
   create_table "abouts", :force => true do |t|
     t.string   "title"
@@ -27,8 +27,12 @@ ActiveRecord::Schema.define(:version => 20131129152018) do
     t.string   "publisher"
     t.datetime "published_at"
     t.string   "download_url"
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
+    t.datetime "created_at",             :null => false
+    t.datetime "updated_at",             :null => false
+    t.string   "bookcover_file_name"
+    t.string   "bookcover_content_type"
+    t.integer  "bookcover_file_size"
+    t.datetime "bookcover_updated_at"
   end
 
   create_table "comments", :force => true do |t|

@@ -27,12 +27,11 @@
 
   <p>
     <b>Published at:</b>
-    <%= @book.published_at %>
+    <%= @book.published_at.strftime('%Y-%m-%d') %>
   </p>
 
   <p>
-    <b>Download url:</b>
-    <%= @book.download_url %>
+    <span class="book-download"><%= link_to 'Download', @book.download_url, class: 'pure-button pure-button-success', target: '_blank'%></span>
   </p>
 </div>
 

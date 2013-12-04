@@ -1,32 +1,43 @@
 <%content_for :menu do%>
-  <%= render :partial => 'common/menu', :locals => {:curr => 'Home'}-%>
+  <%= render :partial => 'common/menu', :locals => {:curr => 'Article'}-%>
 <%end%>
 
 <%content_for :content do %>
-  <% @posts.each do |post|%>
-    <div class="posts post-preview">
-      <!-- A single blog post -->
-      <section class="post">
-        <header class="post-header">
-          <h3 class="post-title"><%= link_to post.title,  post%></h3>
-          <p class="post-meta">
-            Tags:
-            <% post.tag_list.map do |t|%>
-              <%= link_to t, tag_path(t), :class => 'post-category post-category-design'%>
-            <%end%>
+  <div class="posts">
+    <% @posts.each do |post|%>
+      <div class="post-preview">
+        <!-- A single blog post -->
+        <section class="post">
+          <header class="post-header">
+            <h3 class="post-title"><%= link_to post.title,  post%></h3>
+            <p class="post-meta">
+              Tags:
+              <% post.tag_list.map do |t|%>
+                <%= link_to t, tag_path(t), :class => 'post-category post-category-design'%>
+              <%end%>
 
-            Published At:
-            <%= post.created_at.strftime('%Y-%m-%d')%>
-          </p>
-        </header>
+              Published At:
+              <%= post.created_at.strftime('%Y-%m-%d')%>
+            </p>
+          </header>
 
-        <div class="post-description">
-          <p><%= post.description-%>...<span><%= link_to "Read More", post%></span></p>
-        </div>
-      </section>
-    </div>
-  <% end %>
-  <%= will_paginate @posts, class: 'pure-paginator' %>
+          <div class="post-description">
+            <p><%= post.description-%>...<span><%= link_to "Read More", post%></span></p>
+          </div>
+        </section>
+      </div>
+    <% end %>
+  </div>
+
+      <div class="sidebar">
+        <ul class="links">
+          <% Post.tag_counts_on(:tags).each do |tag|%>
+            <li><%= link_to tag.name, "/tags/#{tag.name}"%> <span style="background: #008ed4; color: #fff; border-radius: 10px; font-size: 1.5"><%= Post.tagged_with(tag.name).size%></span></li>
+          <%end%>
+        </ul>
+      </div>
+
+  <div class="pagination"><%= will_paginate @posts, class: 'pure-paginator' %></div>
 <% end %>
 
 
